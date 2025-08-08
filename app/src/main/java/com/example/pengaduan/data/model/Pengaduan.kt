@@ -1,0 +1,19 @@
+package com.example.pengaduan.data.model
+
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+@Entity(tableName = "pengaduan")
+data class Pengaduan(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val nama: String,
+    val deskripsi: String,
+    val status: String,
+    val tanggal: String,
+    val tipe: String,          // layanan, keamanan, fasilitas
+    val fotoUri: String? = null // URI foto sebagai String
+): Parcelable
